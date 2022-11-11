@@ -3,27 +3,33 @@ package com.example.myapplication;
 import static org.junit.Assert.assertNotEquals;
 import static org.junit.Assert.assertNotNull;
 
+import android.content.Intent;
 import android.widget.TextView;
 
 import androidx.test.core.app.ActivityScenario;
 import androidx.test.ext.junit.rules.ActivityScenarioRule;
+import androidx.test.ext.junit.runners.AndroidJUnit4;
+
+//import org.robolectric.annotation.Config;
 
 
 import org.junit.Before;
 import org.junit.Rule;
 import org.junit.Test;
+import org.junit.runner.RunWith;
 
+@RunWith(AndroidJUnit4.class)
 public class MainActivityTest {
+
     @Rule
-    public ActivityScenarioRule<MainActivity> mActivityTestRule = new ActivityScenarioRule<>(MainActivity.class);
+    public ActivityScenarioRule<MainActivity> mActivityTestRule = new ActivityScenarioRule<>(MainActivity.class);;
     private MainActivity mActivity = null;
     private TextView text;
 
     @Before
     public void setUp() throws Exception {
-        ActivityScenario.launch(MainActivity.class);
         mActivityTestRule.getScenario().onActivity(activity -> {
-            mActivity = activity;
+            this.mActivity = activity;
         });
     }
 
