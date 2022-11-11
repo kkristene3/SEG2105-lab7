@@ -3,15 +3,10 @@ package com.example.myapplication;
 import static org.junit.Assert.assertNotEquals;
 import static org.junit.Assert.assertNotNull;
 
-import android.content.Intent;
 import android.widget.TextView;
 
-import androidx.test.core.app.ActivityScenario;
 import androidx.test.ext.junit.rules.ActivityScenarioRule;
 import androidx.test.ext.junit.runners.AndroidJUnit4;
-
-//import org.robolectric.annotation.Config;
-
 
 import org.junit.Before;
 import org.junit.Rule;
