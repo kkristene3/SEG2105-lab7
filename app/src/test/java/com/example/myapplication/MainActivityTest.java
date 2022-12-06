@@ -22,7 +22,6 @@ public class MainActivityTest {
     public ActivityScenarioRule<MainActivity> mActivityTestRule = new ActivityScenarioRule<>(MainActivity.class);;
     private MainActivity mActivity = null;
     private TextView text;
-    private Button button;
 
     @Before
     public void setUp() throws Exception {
@@ -71,10 +70,7 @@ public class MainActivityTest {
     @Test
     public void checkSubmitButton() throws Exception {
         assertNotNull(mActivity.findViewById(R.id.submit_btn));
-        button = mActivity.findViewById(R.id.submit_btn);
-        button.performClick();
-
-
+        text = mActivity.findViewById(R.id.submit_btn);
         text.setText("submit");
         String name = text.getText().toString();
         assertEquals("submit", name);
